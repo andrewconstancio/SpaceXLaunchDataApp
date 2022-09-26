@@ -11,6 +11,9 @@
 		1C4184A128E0F5900070BB6D /* Ext-LaunchDetailHeaderCellFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4184A028E0F5900070BB6D /* Ext-LaunchDetailHeaderCellFunctions.swift */; };
 		1C4184A328E104F40070BB6D /* LaunchDetailBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4184A228E104F40070BB6D /* LaunchDetailBodyCell.swift */; };
 		1C4184A528E105340070BB6D /* Ext-LaunchDetailBodyCellFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4184A428E105340070BB6D /* Ext-LaunchDetailBodyCellFunctions.swift */; };
+		1C4184AB28E1D8690070BB6D /* HomeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4184AA28E1D8680070BB6D /* HomeViewControllerDelegate.swift */; };
+		1C4184AE28E1DFA50070BB6D /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4184AD28E1DFA50070BB6D /* NetworkMonitor.swift */; };
+		1C4184B128E1F17C0070BB6D /* WelcomeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4184B028E1F17B0070BB6D /* WelcomeHomeViewController.swift */; };
 		1C6099AD28DE4CF400ED42E9 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6099AC28DE4CF400ED42E9 /* APICaller.swift */; };
 		1C6099AF28DE624400ED42E9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6099AE28DE624400ED42E9 /* HomeViewModel.swift */; };
 		1C6099B128DE72ED00ED42E9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6099B028DE72ED00ED42E9 /* Observable.swift */; };
@@ -43,6 +46,9 @@
 		1C4184A028E0F5900070BB6D /* Ext-LaunchDetailHeaderCellFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-LaunchDetailHeaderCellFunctions.swift"; sourceTree = "<group>"; };
 		1C4184A228E104F40070BB6D /* LaunchDetailBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailBodyCell.swift; sourceTree = "<group>"; };
 		1C4184A428E105340070BB6D /* Ext-LaunchDetailBodyCellFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-LaunchDetailBodyCellFunctions.swift"; sourceTree = "<group>"; };
+		1C4184AA28E1D8680070BB6D /* HomeViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDelegate.swift; sourceTree = "<group>"; };
+		1C4184AD28E1DFA50070BB6D /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		1C4184B028E1F17B0070BB6D /* WelcomeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeHomeViewController.swift; sourceTree = "<group>"; };
 		1C6099AC28DE4CF400ED42E9 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		1C6099AE28DE624400ED42E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1C6099B028DE72ED00ED42E9 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -119,6 +125,22 @@
 			path = LaunchDetailHeaderCell;
 			sourceTree = "<group>";
 		};
+		1C4184AC28E1DF8E0070BB6D /* NetworkMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				1C4184AD28E1DFA50070BB6D /* NetworkMonitor.swift */,
+			);
+			path = NetworkMonitor;
+			sourceTree = "<group>";
+		};
+		1C4184AF28E1F15D0070BB6D /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				1C4184B028E1F17B0070BB6D /* WelcomeHomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		1C6099AA28DE4C4F00ED42E9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +162,7 @@
 			children = (
 				1C6A2DB328DCDB6E00F7DE34 /* HomeViewController.swift */,
 				1C6A2DC728DCEAAA00F7DE34 /* Ext-HomeVCFunctions.swift */,
+				1C4184AA28E1D8680070BB6D /* HomeViewControllerDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -180,6 +203,7 @@
 		1C6A2DAE28DCDB6E00F7DE34 /* SpaceXLaunchDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				1C4184AC28E1DF8E0070BB6D /* NetworkMonitor */,
 				1C6099AB28DE4CDD00ED42E9 /* APICaller */,
 				1C6099AA28DE4C4F00ED42E9 /* ViewModels */,
 				1C6A2DDE28DE101500F7DE34 /* Models */,
@@ -216,6 +240,7 @@
 		1C6A2DD628DDF1E800F7DE34 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1C4184AF28E1F15D0070BB6D /* Welcome */,
 				1C6099CC28E0BFF700ED42E9 /* HomeSplit */,
 				1C6099C028DF9E0900ED42E9 /* Launch */,
 				1C6099B228DEB04C00ED42E9 /* Home */,
@@ -326,11 +351,13 @@
 			files = (
 				1C6099B828DF5CAC00ED42E9 /* Ext-String.swift in Sources */,
 				1C4184A328E104F40070BB6D /* LaunchDetailBodyCell.swift in Sources */,
+				1C4184B128E1F17C0070BB6D /* WelcomeHomeViewController.swift in Sources */,
 				1C6099B128DE72ED00ED42E9 /* Observable.swift in Sources */,
 				1C6099CA28DFBF0400ED42E9 /* Ext-UIViewController.swift in Sources */,
 				1C6A2DC828DCEAAA00F7DE34 /* Ext-HomeVCFunctions.swift in Sources */,
 				1C6A2DB428DCDB6E00F7DE34 /* HomeViewController.swift in Sources */,
 				1C6A2DCC28DD340200F7DE34 /* Ext-UIView.swift in Sources */,
+				1C4184AE28E1DFA50070BB6D /* NetworkMonitor.swift in Sources */,
 				1C6099AD28DE4CF400ED42E9 /* APICaller.swift in Sources */,
 				1C6A2DCA28DCED0600F7DE34 /* HomeHeaderCell.swift in Sources */,
 				1C4184A128E0F5900070BB6D /* Ext-LaunchDetailHeaderCellFunctions.swift in Sources */,
@@ -338,6 +365,7 @@
 				1C6A2DE028DE10FF00F7DE34 /* LaunchModel.swift in Sources */,
 				1C6A2DDD28DDFC2400F7DE34 /* Ext-LaunchHomeHeaderCellFunctions.swift in Sources */,
 				1C6099CE28E0C04D00ED42E9 /* Ext-LaunchVCFunctions.swift in Sources */,
+				1C4184AB28E1D8690070BB6D /* HomeViewControllerDelegate.swift in Sources */,
 				1C6A2DC628DCE3EB00F7DE34 /* LaunchHomeCell.swift in Sources */,
 				1C6099B428DEB86B00ED42E9 /* PaddingLabel.swift in Sources */,
 				1C4184A528E105340070BB6D /* Ext-LaunchDetailBodyCellFunctions.swift in Sources */,

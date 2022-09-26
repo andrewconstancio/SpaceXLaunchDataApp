@@ -7,14 +7,17 @@
 
 extension LaunchDetailHeaderCell {
     
+    //set up cell sub views 
     func setupViews() {
 
+        //add subviews
         addSubview(basicCellContainerView)
         addSubview(missionNameLabel)
         addSubview(dateOfLaunchLabel)
         addSubview(playerView)
         addSubview(successFailLabel)
         
+        //add contraints
         basicCellContainerView
             .anchor(top: topAnchor, left: leftAnchor,
                     bottom: bottomAnchor, right: rightAnchor,
@@ -28,7 +31,7 @@ extension LaunchDetailHeaderCell {
         
         playerView.anchor(top: dateOfLaunchLabel.bottomAnchor, left: basicCellContainerView.leftAnchor, bottom: nil, right: basicCellContainerView.rightAnchor, centerX: nil, centerY: nil, paddingTop: 20, paddingLeft: 15, paddingBottom: 0, paddingRight: 15, width: 0, height: 250, xPadding: 0, yPadding: 0)
         
-        successFailLabel.anchor(top: playerView.bottomAnchor, left: basicCellContainerView.leftAnchor, bottom: nil, right: nil, centerX: nil, centerY: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 10, paddingRight: 0, width: 0, height: 0, xPadding: 0, yPadding: 0)
+        successFailLabel.anchor(top: playerView.bottomAnchor, left: basicCellContainerView.leftAnchor, bottom: nil, right: nil, centerX: nil, centerY: nil, paddingTop: 15, paddingLeft: 20, paddingBottom: 10, paddingRight: 0, width: 0, height: 0, xPadding: 0, yPadding: 0)
         
     }
 }

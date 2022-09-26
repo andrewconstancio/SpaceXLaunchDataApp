@@ -17,18 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = HomeSplitViewController()
+//        if NetworkMonitor.shared.isConnected {
+            window?.rootViewController = HomeSplitViewController()
+//        } else {
+//            let vc = UIViewController()
+//            vc.view.backgroundColor = .systemRed
+//            window?.rootViewController = vc
+//        }
+
         window?.makeKeyAndVisible()
-        
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        self.window = UIWindow(windowScene: windowScene)
-//        let splitVC = UISplitViewController()
-//        let primaryViewController = HomeViewController()
-//        let navigationController = UINavigationController(rootViewController: primaryViewController)
-//        let secondaryViewController = LaunchViewController()
-//        splitVC.viewControllers = [navigationController, secondaryViewController]
-//        self.window!.rootViewController = splitVC
-//        self.window!.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

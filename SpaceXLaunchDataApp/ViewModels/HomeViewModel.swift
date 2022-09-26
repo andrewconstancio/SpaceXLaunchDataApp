@@ -9,10 +9,13 @@ import UIKit
 
 
 class HomeViewModel {
+    //create launch observable object array
     var launches: Observable<[Launch]> = Observable([])
+    //create loading state for home view controller
     var isLoading: Observable<Bool> = Observable(true)
     
     init() {
+        //fetch data from api
         fetchData()
     }
     

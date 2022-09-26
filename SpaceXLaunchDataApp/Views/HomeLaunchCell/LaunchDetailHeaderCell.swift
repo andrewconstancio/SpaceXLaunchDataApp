@@ -34,7 +34,6 @@ class LaunchDetailHeaderCell: UICollectionViewCell {
     //mission name
     let missionNameLabel: UILabel = {
         let label = UILabel()
-        label.isSkeletonable = true
         label.font = UIFont.systemFont(ofSize: 24, weight: .heavy)
         label.textColor = .dynamicColor(light: .black, dark: .white)
         label.numberOfLines = 2
@@ -47,7 +46,6 @@ class LaunchDetailHeaderCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
         label.textColor = .systemGray
-        label.isSkeletonable = true
         label.numberOfLines = 0
         label.layer.zPosition = 1
         return label
@@ -58,7 +56,6 @@ class LaunchDetailHeaderCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
         label.textColor = .dynamicColor(light: .systemGray2, dark: .white)
-        label.isSkeletonable = true
         label.numberOfLines = 0
         label.layer.zPosition = 1
         return label

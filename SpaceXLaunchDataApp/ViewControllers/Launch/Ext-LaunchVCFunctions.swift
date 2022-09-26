@@ -67,6 +67,7 @@ extension LaunchViewController: UICollectionViewDataSource, UICollectionViewDele
                     headerCell.dateOfLaunchLabel.text = "\u{2000}\(isoDate.fromUTCToLocalDate())"
                     headerCell.dateOfLaunchLabel.addSystemImage(imageName: "calendar", afterLabel: false)
         
+                    // check if mission was a success
                     let successOfLaunch  = launch?.launchSuccess ?? false
                     if successOfLaunch {
                         headerCell.successFailLabel.text = "Success"
@@ -75,7 +76,7 @@ extension LaunchViewController: UICollectionViewDataSource, UICollectionViewDele
                         headerCell.successFailLabel.text = "Fail"
                         headerCell.successFailLabel.backgroundColor = .systemRed
                     }
-        
+                    // load video player with youtube video
                     headerCell.playerView.load(withVideoId: self.launch?.links?.youtubeID ?? "")
                 return headerCell
             } else {
@@ -111,7 +112,7 @@ extension LaunchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
-            return CGSize(width: view.frame.width, height: 440)
+            return CGSize(width: view.frame.width, height: 445)
         } else {
             return CGSize(width: 0, height: 0)
         }

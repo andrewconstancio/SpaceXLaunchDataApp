@@ -24,7 +24,6 @@ class LaunchHomeCell: UICollectionViewCell {
     // launch patch image view
     let launchImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.isSkeletonable = true
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -32,7 +31,6 @@ class LaunchHomeCell: UICollectionViewCell {
     //mission name
     let missionNameLabel: UILabel = {
         let label = UILabel()
-        label.isSkeletonable = true
         label.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         label.textColor = .dynamicColor(light: .black, dark: .white)
         return label
@@ -59,18 +57,14 @@ class LaunchHomeCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
         label.textColor = .systemGray
-        label.isSkeletonable = true
         return label
     }()
     
     //date of launch
     let dateOfLaunchLabel: UILabel = {
         let label = UILabel()
-        //label.text = "\u{2000}March 24, 2006"
         label.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
         label.textColor = .systemGray2
-        label.isSkeletonable = true
-        //label.addSystemImage(imageName: "calendar", afterLabel: false)
         return label
     }()
 

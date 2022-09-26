@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol HomeViewControllerDelegate {
-    func didSelectLaunch(launch: Launch)
-}
-
 
 class HomeViewController: UIViewController {
     

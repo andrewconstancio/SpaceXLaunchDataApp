@@ -5,8 +5,7 @@
 //  Created by Andrew Constancio on 9/22/22.
 //
 
-import UIKit
-import SkeletonView
+import UIKit 
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

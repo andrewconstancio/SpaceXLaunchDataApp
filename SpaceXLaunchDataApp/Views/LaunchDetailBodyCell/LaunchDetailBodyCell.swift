@@ -184,7 +184,6 @@ class LaunchDetailBodyCell: UICollectionViewCell {
     // patch image view
     let patchImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.isSkeletonable = true
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
