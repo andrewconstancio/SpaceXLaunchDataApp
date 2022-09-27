@@ -10,14 +10,17 @@ struct Constants {
     static let spaceXLaunchDataURL = "https://api.spacexdata.com/v3/launches?order=desc"
 }
 
+/// API  error enum
 enum APIError: Error {
     case failedToGetData
 }
 
-class APICaller {
+class APICaller: APICallerProtocol {
+    /// Shares instance of  APICaller
     static let shared = APICaller()
     
-    func getLaunchData(completion: @escaping(Result<[Launch], Error>) -> Void) {
+    /// Get the data from space x api and stores data in the launch model
+    func getLaunchData(completion: @escaping([Launch]?, Error?) -> Void) {
         guard let url = URL(string: Constants.spaceXLaunchDataURL) else {return}
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -26,15 +29,13 @@ class APICaller {
             }
             do {
                 let results = try JSONDecoder().decode([Launch].self, from: data)
-                completion(.success(results))
+                completion(results, nil)
             } catch {
-                completion(.failure(APIError.failedToGetData))
+                completion(nil, APIError.failedToGetData)
             }
         }
-        
         task.resume()
     }
-    
 }
 
 

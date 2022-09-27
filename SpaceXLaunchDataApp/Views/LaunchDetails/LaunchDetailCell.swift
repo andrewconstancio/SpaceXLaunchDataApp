@@ -6,12 +6,83 @@
 //
 
 import UIKit
+import SDWebImage
 
+///  Launch detail body collection view cell for launch details collection view
+///
 class LaunchDetailBodyCell: UICollectionViewCell {
     
+    /// Launch model instance in launch details body cell
+    var launch: Launch? {
+        didSet {
+            
+            /// mission patch string url from model
+            let patchURl = launch?.links?.missionPatchSmall ?? ""
+            
+            /// convert mission patch string url to type URL
+            let url = URL(string: patchURl)
+            
+            //set cell image to url image if available
+            patchImage.sd_setImage(with: url) { [weak self] (image, error, cache, urls) in
+                if (error != nil) {
+                    //set default image if patch mission image not available
+                    let origImage = UIImage(named: "rocketPlaceholder")?.withTintColor(.dynamicColor(light: .black, dark: .systemOrange))
+                    self?.patchImage.image = origImage
+                } else {
+                    self?.patchImage.image = image
+                }
+            }
+            
+            /// Rocket name info from model
+            let rocketName = launch?.rocket?.rocketName ?? ""
+            
+            /// Rocket serial info from model
+            let coreSerial = launch?.rocket?.firstStage?.cores?[0].coreSerial ?? ""
+            
+            /// Rocket core block info from model
+            let coreBlock = launch?.rocket?.firstStage?.cores?[0].block ?? 0
+            
+            /// Rocket core flight info from model
+            let coreFlight = launch?.rocket?.firstStage?.cores?[0].flight ?? 0
+            
+            /// Payload sub info from model
+            let payLoadSubInfo = launch?.rocket?.secondStage?.payloads?[0].payloadID ?? "-"
+            
+            /// Payload customer info from model
+            let customer = launch?.rocket?.secondStage?.payloads?[0].customers?[0] ?? "-"
+            
+            /// Payload type info from model
+            let payloadType = launch?.rocket?.secondStage?.payloads?[0].payloadType ?? "-"
+            
+            /// Payload mass info from model
+            let payloadMass = launch?.rocket?.secondStage?.payloads?[0].payloadMassLbs ?? 0
+            
+            /// Payload nationaliy info from model
+            let payloadNationality = launch?.rocket?.secondStage?.payloads?[0].nationality ?? "-"
+            
+            /// Payload orbit info from model
+            let payloadOrbit = launch?.rocket?.secondStage?.payloads?[0].orbit ?? "-"
+            
+            /// Mission details info from model
+            let missionDetails = launch?.details ?? ""
+            
+            rocketNameLabel.text = rocketName
+            coreInfoLabel.text = "Core\u{2000}\u{2000}Fight \(coreFlight) \u{2022} Block \(coreBlock) - \(coreSerial)"
+            coreInfoLabel.halfTextColorChange(fullText: coreInfoLabel.text ?? "", changeText: "Core")
+            payloadCustomerInfoLabel.text = customer
+            payloadInfoSubLabel.text = payLoadSubInfo
+            payloadTypeInfoLabel.text = payloadType
+            payloadMassInfoLabel.text = "\(payloadMass) lbs"
+            payloadNationalityInfoLabel.text = payloadNationality
+            payloaOrbitInfoLabel.text = payloadOrbit
+            missionInfoTextView.text = missionDetails
+        }
+    }
+    
+    /// Cell id
     static var identifer = "launchDetailBodyCell"
     
-    // rocket info container
+    /// Rocket info container
     let rocketInfoContainerView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
@@ -19,7 +90,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return view
     }()
     
-    //rocket name label
+    /// Rocket name label
     let rocketNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
@@ -27,7 +98,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //core info container
+    /// Core info container
     let coreContainer: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
@@ -35,7 +106,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return view
     }()
     
-    //core info name label
+    /// Core info name label
     let coreInfoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .light)
@@ -43,7 +114,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //playload container
+    /// Playload container
     let payloadContainer: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
@@ -51,7 +122,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return view
     }()
     
-    //playload label
+    /// Playload label
     let payloadLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
@@ -60,7 +131,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //payload info sub label
+    /// Payload info sub label
     let payloadInfoSubLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -68,7 +139,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //pay load customer label
+    /// Pay load customer label
     let payloadCustomerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .light)
@@ -77,7 +148,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //payload customer info label
+    /// Payload customer info label
     let payloadCustomerInfoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -85,7 +156,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //payload type label
+    /// Payload type label
     let payloadTypeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .light)
@@ -94,7 +165,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //payload type info label
+    /// Payload type info label
     let payloadTypeInfoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -102,7 +173,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //payload mass label
+    /// Payload mass label
     let payloadMassLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .light)
@@ -111,7 +182,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
 
-    //payload mass info label
+    /// Payload mass info label
     let payloadMassInfoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -120,7 +191,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
     }()
     
     
-    //payload nationality label
+    /// Payload nationality label
     let payloadNationalityLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .light)
@@ -129,7 +200,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //payload nationality info label
+    /// Payload nationality info label
     let payloadNationalityInfoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -137,7 +208,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //payload oribit label
+    /// Payload oribit label
     let payloadOrbitLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .light)
@@ -146,7 +217,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //payload oribit info label
+    /// Payload oribit info label
     let payloaOrbitInfoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -154,7 +225,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //mission detail container
+    /// Mission details container
     let missionDetailContainer: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
@@ -162,7 +233,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return view
     }()
     
-    //mission detail label
+    /// Mission details label
     let missionDetailLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
@@ -171,7 +242,7 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return label
     }()
     
-    //mission detail info text view
+    /// Mission detail info text view
     let missionInfoTextView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 18, weight: .light)
@@ -181,13 +252,12 @@ class LaunchDetailBodyCell: UICollectionViewCell {
         return textView
     }()
     
-    // patch image view
+    /// Mission patch image view
     let patchImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -17,13 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-//        if NetworkMonitor.shared.isConnected {
+        
+        // check if connected to internet
+        if NetworkMonitor.shared.isConnected {
             window?.rootViewController = HomeSplitViewController()
-//        } else {
-//            let vc = UIViewController()
-//            vc.view.backgroundColor = .systemRed
-//            window?.rootViewController = vc
-//        }
+        } else {
+            let noConnection = NoConnectionViewController()
+            window?.rootViewController = noConnection
+        }
 
         window?.makeKeyAndVisible()
     }
