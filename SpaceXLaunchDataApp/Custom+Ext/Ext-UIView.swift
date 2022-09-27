@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIView {
-    // My preferred method for easily anchoring a UIView
+    /// Method for easily applying constraints to a `UIView`
     func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, centerX: NSLayoutXAxisAnchor?, centerY: NSLayoutYAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat, xPadding: CGFloat, yPadding: CGFloat) {
         
         translatesAutoresizingMaskIntoConstraints = false

@@ -7,11 +7,11 @@
 
 import UIKit
 
+/// Creates a spinner `UIVIew`
 var vSpinner: UIView?
 
 extension UIViewController {
-    /// Applys a spinner animation view to the given UIView
-    ///
+    /// Applys a `vSpinner` animation view to the given UIView
     ///
     func showSpinner(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
@@ -28,31 +28,12 @@ extension UIViewController {
         vSpinner = spinnerView
     }
     
+    /// Removes `vSpinner` from current view
     ///
     func removeSpinner() {
         DispatchQueue.main.async {
             vSpinner?.removeFromSuperview()
             vSpinner = nil
-        }
-    }
-}
-
-extension UIViewController {
-    
-    func setupNavigationMultilineTitle() {
-        guard let navigationBar = self.navigationController?.navigationBar else { return }
-        for sview in navigationBar.subviews {
-            for ssview in sview.subviews {
-                guard let label = ssview as? UILabel else { break }
-                if label.text == self.title {
-                    label.numberOfLines = 0
-                    label.lineBreakMode = .byWordWrapping
-                    label.sizeToFit()
-                    UIView.animate(withDuration: 0.3, animations: {
-                        navigationBar.frame.size.height = 57 + label.frame.height
-                    })
-                }
-            }
         }
     }
 }

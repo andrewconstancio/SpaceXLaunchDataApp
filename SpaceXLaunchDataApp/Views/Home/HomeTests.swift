@@ -30,6 +30,5 @@ class HomeTests: XCTestCase {
         self.subject.homeViewModel.isLoading.bind { loading in
             XCTAssertTrue(loading!)
         }
-        
     }
 }

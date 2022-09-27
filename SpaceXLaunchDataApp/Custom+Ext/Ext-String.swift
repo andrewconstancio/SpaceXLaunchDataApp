@@ -8,9 +8,11 @@
 import UIKit
 
 extension String {
+    
+    /// Formats a UTC date to name of month, day, year
+    ///
     func fromUTCToLocalDate() -> String {
         let dateFormatter = DateFormatter()
-        //dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         var formattedString = self.replacingOccurrences(of: "Z", with: "")
@@ -26,5 +28,4 @@ extension String {
         dateFormatter.timeZone = TimeZone.current
         return dateFormatter.string(from: date)
     }
-    
 }

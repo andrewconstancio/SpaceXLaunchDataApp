@@ -5,7 +5,8 @@
 //  Created by Andrew Constancio on 9/23/22.
 //
 
-
+/// Creates an obersable object with listeners
+/// 
 class Observable<T> {
     var value: T? {
         didSet {
@@ -14,6 +15,7 @@ class Observable<T> {
             }
         }
     }
+    
     private var listeners: [((T?) -> Void)] = []
     
     init(_ value: T?) {

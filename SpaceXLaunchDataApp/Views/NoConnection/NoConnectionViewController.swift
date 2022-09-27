@@ -33,8 +33,14 @@ class NoConnectionViewController: UIViewController {
         view.addSubview(noConnectionTextLabel)
         
         // anchor no connection text label
-        noConnectionTextLabel
-            .anchor(top: nil, left: nil, bottom: nil, right: nil, centerX: view.centerXAnchor, centerY: view.centerYAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, xPadding: 0, yPadding: 0)
+        noConnectionTextLabel.anchor(
+            top: nil, left: nil,
+            bottom: nil, right: nil,
+            centerX: view.centerXAnchor, centerY: view.centerYAnchor,
+            paddingTop: 0, paddingLeft: 0,
+            paddingBottom: 0, paddingRight: 0,
+            width: 0, height: 0,
+            xPadding: 0, yPadding: 0
+        )
     }
-
 }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+///  A UI:abel that has the ability to add padding around it
 class PaddingLabel: UILabel {
     var textEdgeInsets = UIEdgeInsets.zero {
         didSet { invalidateIntrinsicContentSize() }

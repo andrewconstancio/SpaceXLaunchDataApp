@@ -59,10 +59,6 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UISearch
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     /// Filters launch list data from search bar
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else {

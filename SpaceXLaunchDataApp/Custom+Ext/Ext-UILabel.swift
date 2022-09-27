@@ -9,7 +9,9 @@ import UIKit
 
 extension UILabel {
     
-    func halfTextColorChange (fullText : String , changeText : String ) {
+    /// Changes part of string to a white heavy text with a font size of 22
+    ///
+    func halfTextColorChange(fullText: String , changeText: String) {
         let strNumber: NSString = fullText as NSString
         let range = (strNumber).range(of: changeText)
         let attribute = NSMutableAttributedString.init(string: fullText)
@@ -17,6 +19,8 @@ extension UILabel {
         self.attributedText = attribute
     }
     
+    /// Appends or prepends a system image to a given string
+    ///
     func addSystemImage(imageName: String, afterLabel boolAfterLabel: Bool = false) {
         let attachment: NSTextAttachment = NSTextAttachment()
         
