@@ -13,13 +13,15 @@ Dependencies
   - YoutubeiOSPlayerHelper
  
  <div>
- <img width="200" alt="SpaceXAppiPhoneLight" style=" float:left" src="https://user-images.githubusercontent.com/61609406/192626562-112d6b7d-0026-451c-85a1-dcf598c7664d.png">
- <img width="200" alt="SpaceAppiPhoneDark" style=" float:right" src="https://user-images.githubusercontent.com/61609406/192626872-dd3b2fa3-15bf-477a-a873-d1ebbf30063f.png">
- <img width="200" alt="SpaceXAppDetailiPhoneLight" style=" float:right" src="https://user-images.githubusercontent.com/61609406/192627111-ad2365d9-9a57-4bdf-8084-aa413cb3e21f.png">
+<img width="225" height="450" alt="SpaceXAppiPhoneLight" src="https://user-images.githubusercontent.com/61609406/193058861-9b11e3be-9555-4a91-8225-afed00fa0cf9.png">
+<img width="225" height="450" alt="SpaceAppiPhoneDark" src="https://user-images.githubusercontent.com/61609406/193058905-62fafee8-a67f-4ed9-b94f-4828015856f3.png">
+<img width="225" height="450" alt="SpaceXAppDetailiPhoneLight" src="https://user-images.githubusercontent.com/61609406/193058999-9d38615d-4dc4-477a-be46-b140b4279e05.png">
+
  </div>
 
 <div>
-<img width="400" style=" float:left" alt="SpaceXAppiPadLight" src="https://user-images.githubusercontent.com/61609406/192626019-daefce17-c99f-4db4-97ce-1a18186734f0.png">
-<img width="400" style=" float:right"  alt="SpaceXAppiPadDark" src="https://user-images.githubusercontent.com/61609406/192625853-e456d51a-1b39-4384-9619-7f482f9e6606.png">
+<img width="400" height="300" alt="SpaceXAppiPadLight" src="https://user-images.githubusercontent.com/61609406/193060309-06018efe-cf49-4bd5-aa11-4361f95ffd8a.png">
+<img width="400" height="300" alt="SpaceXAppiPadDark" src="https://user-images.githubusercontent.com/61609406/193060340-2919a0be-e028-4d8e-aeec-85a5ef2d6e52.png">
+
 <div>
-<img width="400" alt="SpaceXAppiPadP" src="https://user-images.githubusercontent.com/61609406/192626203-319af5ea-fb62-4d36-b87a-ee1b4a631411.png">
+<img width="400" alt="SpaceXAppiPadP" src="https://user-images.githubusercontent.com/61609406/193060367-91cc2f27-6b24-4c8d-9117-f12d34eab108.png">
